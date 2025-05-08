@@ -7,3 +7,9 @@
             window.location.href = chrome.runtime.getURL('capsule.html');
         });
     </script>
+
+
+    background-image: url('images/yaystarss.jpg');
+    background-repeat: repeat-y; /* Repeat only vertically */
+    background-position: center top; /* Center horizontally */
+    background-size: auto; /* Keeps original image size */

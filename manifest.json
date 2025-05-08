@@ -18,5 +18,11 @@
     },
     "permissions": [
         "storage"
+    ],
+    "web_accessible_resources": [
+    {
+        "resources": ["images/yaystarss.jpg"],
+        "matches": ["<all_urls>"]
+    }
     ]
 }

@@ -7,10 +7,36 @@
     padding: 8px;
     font-size: 16px;
   }
-body {
-    background-image: url('background.jpg');
-    background-repeat: repeat-y; /* Repeat only vertically */
-    background-position: center top; /* Center horizontally */
-    background-size: auto; /* Keeps original image size */
+body{
+    width: 400px;
+    height: auto;
+    margin: 5px;
+    padding: 5px;
+    background-image: url('../images/yaystarss.jpg');
+    background-repeat: repeat-y;
+  }
+
+  @keyframes rockBackAndForth {
+    0% {
+      transform: rotate(-15deg); /* Rotate left */
+    }
+    50% {
+      transform: rotate(15deg); /* Rotate right */
+    }
+    100% {
+      transform: rotate(-15deg); /* Rotate back to left */
+    }
+  }
+  
+  .rocking-bottle {
+    position: fixed; /* Fixed position, so it moves with the scroll */
+    top: 50px; /* Adjust to your desired vertical position */
+    left: 30px; /* Adjust to your desired horizontal position */
+    transform-origin: center; /* Ensure the rotation happens around the center of the image */
+    animation: rockBackAndForth 3s ease-in-out infinite; /* Animation for rocking */
+    width: 300px; /* Adjust the width (increased size) */
+    height: auto; /* Maintain the aspect ratio */
+    transform: translate(-50%, -50%); /* Centers the image at its position */
+    z-index: 10; /* Ensure it's in front of other elements */
   }
   
