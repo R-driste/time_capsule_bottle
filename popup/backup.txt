@@ -1,0 +1,9 @@
+
+    <script>
+        document.getElementById('goToPagePomodoro').addEventListener('click', () => {
+            window.location.href = chrome.runtime.getURL('pomodoro.html');
+        });
+        document.getElementById('goToPageCapsule').addEventListener('click', () => {
+            window.location.href = chrome.runtime.getURL('capsule.html');
+        });
+    </script>

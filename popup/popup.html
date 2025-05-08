@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bulma.min.css">
+    <link rel="stylesheet" href="bulma.min.css">
     <title>Document HEYY is this working?</title>
 </head>
 <body>
@@ -11,12 +12,36 @@
         <h1 class="title">TIME CAPSULE DROP</h1>
         <div class="class">
             <label class="label">Pomodoro Tools</label>
-            <span class="button is-success">Ice</span>
-            <span class="button is-success">Candle</span>
-            <label class="label">Time Capsule</label>
-            <span class="button is-danger">Stopped</span>
+            <span id="goToPagePomodoro" class="button is-success">Tools</span>
+            <label class="label">..Time Capsule..</label>
+            <span id="goToPageCapsule" class="button is-danger">Capsule</span>
         </div>
     </div>
-    <p1>Popup yayayay</p1>
+    <div class="container m-3">
+        <div class="field">
+            <label class="label">MOOD</label>
+            <div class="select">
+                <select>
+                    <option>Happy</option>
+                    <option>Sad</option>
+                    <option>Angry</option>
+                    <option>Excited</option>
+                    <option>Relaxed</option>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">DATE</label>
+            Today is:
+            <div class="control">
+                <input type="date" class="input">
+            </div>
+        </div>
+        <div class="field">
+            <textarea class="expanding-text" id="expandingText" placeholder="Type something..."></textarea>
+        </div>
+    </div>
+    <script src="expand.js"></script>
+
 </body>
 </html>

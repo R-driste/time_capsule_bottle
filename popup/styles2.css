@@ -1,0 +1,16 @@
+.expanding-text {
+    width: 100%;
+    min-height: 40px;
+    resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 16px;
+  }
+body {
+    background-image: url('background.jpg');
+    background-repeat: repeat-y; /* Repeat only vertically */
+    background-position: center top; /* Center horizontally */
+    background-size: auto; /* Keeps original image size */
+  }
+  
