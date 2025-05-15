@@ -1,3 +1,10 @@
+h1 {
+  font-size: 40px;
+  color: #3c00bf;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Open Sans', cursive, sans-serif;
+}
 .expanding-text {
     width: 100%;
     min-height: 40px;
@@ -8,35 +15,129 @@
     font-size: 16px;
   }
 body{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 400px;
-    height: auto;
+    height: 600px;
     margin: 5px;
     padding: 5px;
-    background-image: url('../images/yaystarss.jpg');
+    background-image: url('../images/abstract-background/90689.jpg');
     background-repeat: repeat-y;
+    border-radius: 20px;
+    overflow: hidden;
   }
-
   @keyframes rockBackAndForth {
     0% {
-      transform: rotate(-15deg); /* Rotate left */
+        transform: rotate(-10deg);
     }
     50% {
-      transform: rotate(15deg); /* Rotate right */
+        transform: rotate(10deg);
     }
     100% {
-      transform: rotate(-15deg); /* Rotate back to left */
+        transform: rotate(-10deg);
     }
+}
+.rocking-bottle {
+  position: fixed;
+  top: 130px;
+  left: 70%;
+  transform: translateX(-50%);
+  transform-origin: center;
+  width: 200px;
+  height: auto;
+  z-index: 10;
+}
+
+.rocking-bottle.animate {
+  animation: rockBackAndForth 2s ease-in-out infinite;
+}
+
+.headingpomo {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.subheadingpomo {
+  font-size: 20px;
+  color: #fff;
+  margin-top: 10px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.caption{
+  font-size: 10px;
+  color: #fff;
+  text-align: left;
+  margin-top: 10px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.button-start {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  h1 {
+      font-size: 2rem;
   }
-  
-  .rocking-bottle {
-    position: fixed; /* Fixed position, so it moves with the scroll */
-    top: 50px; /* Adjust to your desired vertical position */
-    left: 30px; /* Adjust to your desired horizontal position */
-    transform-origin: center; /* Ensure the rotation happens around the center of the image */
-    animation: rockBackAndForth 3s ease-in-out infinite; /* Animation for rocking */
-    width: 300px; /* Adjust the width (increased size) */
-    height: auto; /* Maintain the aspect ratio */
-    transform: translate(-50%, -50%); /* Centers the image at its position */
-    z-index: 10; /* Ensure it's in front of other elements */
+
+  p {
+      font-size: 1rem;
   }
-  
+
+  button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
+}
+
+.timer {
+  font-size: 40px;
+  font-weight: bold;
+  left: 20px
+  color: #fff;
+  background-color: grey;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Open Sans', sans-serif;
+}
