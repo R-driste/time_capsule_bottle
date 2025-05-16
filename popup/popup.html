@@ -10,17 +10,18 @@
 </head>
 <body>
     <h1> Welcome to your Pomodoro Timer!</h1>
-
     <div id="page_1">
     <button type="button" id="goToPomodoro">Let's Go!</button>
+    <p> Use this as a convenient browser timer for your study sessions. </p>
     </div>
 
     <div id="page_2" style="display: none;">
+    
     <img src="../images/Glass.png" alt="Rocking Bottle" class="rocking-bottle">
     <img src="../images/Ice.png" alt="Rocking Bottle" class="rocking-bottle">
     <img src="../images/Water.png" alt="Rocking Bottle" class="rocking-bottle">
     <div class="field">
-        <label class="subheadingpomo">TIME</label>
+        <label class="headingpomo">TIME</label>
         <p class="caption">I will study for # minutes:</p>
         <div class="control">
             <input type="number" class="input" id="durationInput" placeholder="Enter minutes">
@@ -34,15 +35,17 @@
         <p id="timer" class="timer">00:00</p>
     </div>
     <div class="field">
-        <label class="subheadingpomo">GOALS</label>
+        <label class="headingpomo">GOALS</label>
         <p class="caption">I will complete:</p>
         <textarea class="expanding-text" id="expandingText" placeholder="Type something..."></textarea>
     </div>
     </div>
-    
+
+    <audio id="alarmSound" src="tada-fanfare-a-6313.mp3" preload="auto"></audio>
     <script src="expand.js"></script>
     <script src="hide.js"></script>
     <script src="timer.js"></script>
+    <script src="alarm.js"></script>
 
 </body>
 </html>
