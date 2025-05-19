@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="bulma.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles2.css">
+    
     <title>Document HEYY is this working?</title>
 </head>
 <body>
@@ -16,34 +17,39 @@
     </div>
 
     <div id="page_2" style="display: none;">
-    
-    <img src="../images/Glass.png" alt="Rocking Bottle" class="rocking-bottle">
-    <img src="../images/Ice.png" alt="Rocking Bottle" class="rocking-bottle">
-    <img src="../images/Water.png" alt="Rocking Bottle" class="rocking-bottle">
-    <div class="field">
-        <label class="headingpomo">TIME</label>
-        <p class="caption">I will study for # minutes:</p>
-        <div class="control">
-            <input type="number" class="input" id="durationInput" placeholder="Enter minutes">
+        <div class="rocking-bottle animate">
+            <img src="../images/Glass.png" alt="Bottle Glass" class="bottle-layer glass">
+            <img src="../images/Ice.png" alt="Ice" class="bottle-layer ice" id="ice">
+            <img src="../images/Water.png" alt="Water" class="bottle-layer water" id="water">
         </div>
-    </div>
 
-    <div class="class">
-        <span class="button-start" id="startButton">Start the Timer!</span>
-    </div>
-    <div class="timer-container">
-        <p id="timer" class="timer">00:00</p>
-    </div>
-    <div class="field">
-        <label class="headingpomo">GOALS</label>
-        <p class="caption">I will complete:</p>
-        <textarea class="expanding-text" id="expandingText" placeholder="Type something..."></textarea>
-    </div>
+        <div class="field">
+            <label class="headingpomo">🕒 TIME:</label>
+            <p class="caption">I will study for # minutes:</p>
+            <div class="control">
+                <input type="number" class="input" id="durationInput" placeholder="Enter minutes">
+            </div>
+        </div>
+
+        <div class="class">
+            <span class="button-start" id="startButton">Start the Timer!</span>
+        </div>
+        <div class="class">
+            <span class="button-stop" id="stopButton">Stop the Timer.</span>
+        </div>
+        <div class="timer-container">
+            <p id="timer" class="timer">00:00</p>
+        </div>
+        <div class="field">
+            <label class="headingpomo">📝 GOALS:</label>
+            <p class="caption">I will complete:</p>
+            <textarea class="expanding-text" id="expandingText" placeholder="Type something..."></textarea>
+        </div>
     </div>
 
     <audio id="alarmSound" src="tada-fanfare-a-6313.mp3" preload="auto"></audio>
     <script src="expand.js"></script>
-    <script src="hide.js"></script>
+    <script src="navigate.js"></script>
     <script src="timer.js"></script>
     <script src="alarm.js"></script>
 

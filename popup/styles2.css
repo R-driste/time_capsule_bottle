@@ -5,6 +5,7 @@ h1 {
   font: bold 40px;
   font-family: 'Open Sans', cursive, sans-serif;
 }
+
 .expanding-text {
     width: 100%;
     min-height: 40px;
@@ -56,6 +57,17 @@ body{
   animation: rockBackAndForth 2s ease-in-out infinite;
 }
 
+.bottle-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#water {
+  transform-origin: bottom;
+  transition: transform 0.3s linear;
+}
 .headingpomo {
   font: bold;
   font-size: 30px;
@@ -83,8 +95,18 @@ body{
   margin: 4px 2px;
   cursor: pointer;
 }
-
-
+.button-stop {
+  background-color: #5a4cd7;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 button {
   background-color: #007BFF;
   color: white;
@@ -139,16 +161,21 @@ button:active {
 /*
 wakatime not working on this wifi? :(
 */
-
-#goToPomodoro{
+#goToPomodoro {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 40px 80px; /* Make the button larger */
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 36px; /* Increase font size */
   cursor: pointer;
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for emphasis */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
