@@ -1,5 +1,5 @@
 h1 {
-  color: #005cbf;
+  color: #000b5b;
   text-align: center;
   margin-top: 20px;
   font: bold 40px;
@@ -25,7 +25,7 @@ body{
     height: 600px;
     margin: 5px;
     padding: 5px;
-    background-image: url('../images/abstract-background/90689.jpg');
+    background-image: url('../images/v640-peipei-09-modernbg.jpg');
     background-repeat: repeat-y;
     border-radius: 20px;
     overflow: hidden;
@@ -44,7 +44,7 @@ body{
 
 .rocking-bottle {
   position: fixed;
-  top: 130px;
+  top: 120px;
   left: 50%;
   transform-origin: center;
   width: 200px; /* Fixed width */
@@ -65,27 +65,41 @@ body{
   left: 0;
 }
 #water {
-  transform-origin: bottom;
+  transform-origin: 50% 90%;
+  transform: scaleY(0); /*glass starts empty*/
   transition: transform 0.3s linear;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
 }
+
+#ice {
+    transform-origin: 50% 90%;
+    transform: scaleY(1);
+    transition: transform 1s linear;
+}
+
 .headingpomo {
   font: bold;
   font-size: 30px;
-  color: #005cbf;
-  margin-top: 10px;
+  color: #25001f;
+  margin-top: 3px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .caption{
-  font-size: 10px;
-  color: #fff;
+  font-size: 15px;
+  color: #000000;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 3px;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .button-start {
   background-color: #4CAF50; /* Green */
   border: none;
+  border-radius: 10px;
   color: white;
   padding: 10px 20px;
   text-align: center;
@@ -94,10 +108,13 @@ body{
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
+
 .button-stop {
-  background-color: #5a4cd7;
+  background-color: #5584e8;
   border: none;
+  border-radius: 10px;
   color: white;
   padding: 10px 20px;
   text-align: center;
@@ -106,7 +123,9 @@ body{
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
+
 button {
   background-color: #007BFF;
   color: white;
@@ -146,36 +165,111 @@ button:active {
 }
 
 .timer {
-  font-size: 40px;
+  display: block;
+  margin: 0;
+  font-size: 50px;
   font-weight: bold;
-  left: 20px
+  position: relative;
   color: white;
   background-color: grey;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 10px;
   display: inline-block;
-  box-shadow: 0 4px 8px lightblue;
   font-family: 'Open Sans', sans-serif;
 }
 
-/*
-wakatime not working on this wifi? :(
-*/
+.timer-container {
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+#audioPlayer {
+  width: 200px;
+  height: 15px;
+}
+
+.music-section {
+  background-color:rgb(59, 222, 222);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #goToPomodoro {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 40px 80px; /* Make the button larger */
+  padding: 40px 80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 36px; /* Increase font size */
+  font-size: 36px;
   cursor: pointer;
-  border-radius: 12px; /* Slightly rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for emphasis */
-
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+#goToGoals {
+  background-color: #ffff90;
+  border: none;
+  color: rgb(255, 129, 11);
+  padding: 40px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    padding: 3px 5px;
+    font-size: 0.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#musicButton{
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px;
+  margin: 0px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
