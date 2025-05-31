@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('page_3').style.display = 'block';
         displayGoals();
     });
+    document.getElementById('goToItems').addEventListener('click', function () {
+        click.play()
+        homeAudio.pause();
+        document.getElementById('page_1').style.display = 'none';
+        document.getElementById('page_4').style.display = 'block';
+        displayGoals();
+    });
     //home page
     document.getElementById('backHome').addEventListener('click', returnHome);
     document.getElementById('backHome2').addEventListener('click', returnHome);

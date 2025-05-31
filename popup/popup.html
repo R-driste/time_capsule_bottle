@@ -13,6 +13,7 @@
     <div id='page_1'>
     <button type='button' id='goToPomodoro'>Let's Go!</button>
     <button type='button' id='goToGoals'>Visit Goals</button>
+    <button type='button' id='goToItems'>My Items</button>
     <p class='caption'> Use this as a convenient browser timer for your study sessions. </p>
     </div>
 
@@ -66,14 +67,20 @@
         <label class='headingpomo'>🏆 MY SAVED GOALS:</label>
         <div id="totalTime"></div>
         <div id='goalList' style='max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;'></div>
-        <button id="saveButton">Download your log!</button>
-        <button id="refreshButton">Clear your log :'O</button>
+        <button id="saveButton">Download!</button>
+        <button id="refreshButton">Clear :'O</button>
+        <img src="../images/icon48.png" style="width: 300px; height: auto; top: 90%; right: 10%;" alt="Icon">
     </div>
 
     <div id='page_4' style='display: none;'>
-        <button class='back-button' id='backHome2'>X</button>
-        <label class='headingpomo'>🏆 MY ITEMS!</label>
-        <div id='iconList' style='max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;'></div>
+        <button class='back-button' id='backHome2'>Back to Home</button>
+        <label class='headingpomo'>🧊 MY ITEMS!</label>
+            
+        <div id='itemList' style='max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;'></div>
+        <form>
+            <label class='headingpomo'>🧊 Current Item Selected:</label>
+            <div id='itemQuickList'></div>
+        </form>
     </div>
 
     <audio id='click' src='../sounds_and_songs/effects/keyboard-click-327728.mp3' preloud='auto'></audio>
@@ -86,6 +93,7 @@
     <source src='../sounds_and_songs/songs/Airport-Lounge(chosic.com).mp3' type='audio/mp3'>
     </audio>
 
+    <script src='items.js'></script>
     <script src='music_control.js'></script>
     <script src='expand.js'></script>
     <script src='maintime.js'></script>

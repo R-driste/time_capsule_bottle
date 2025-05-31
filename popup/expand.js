@@ -107,3 +107,35 @@ function displayGoals() {
     container.appendChild(goalDiv);
   });
 }
+
+//item displays
+function displayItems() {
+  const totalDiv = document.getElementById('totalTime');
+  const container = document.getElementById('itemList');
+  const total = Number(localStorage.getItem('total')) || 0;
+
+  //total time first
+  container.innerHTML = '';
+  totalDiv.innerHTML = `<strong>Total Time Studied:</strong> ${total} minutes`;
+
+  if (history.length === 0) {
+    container.textContent = 'Not working.';
+    return;
+  }
+
+  //formatting for each goal
+  history.sort((a, b) => new Date(b.completed) - new Date(a.completed));
+  history.forEach(goalEntry => {
+    const goalDiv = document.createElement('div');
+    goalDiv.style.marginBottom = '15px';
+    goalDiv.style.padding = '10px';
+    goalDiv.style.borderBottom = '1px solid #ddd';
+
+    goalDiv.innerHTML = `
+      <strong>Goal:</strong> ${goalEntry.goal}<br>
+      <strong>Completed:</strong> ${goalEntry.completed}<br>
+      <strong>Duration:</strong> ${goalEntry.length} minutes
+    `;
+    container.appendChild(goalDiv);
+  });
+}
