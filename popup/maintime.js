@@ -40,16 +40,19 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('page_3').style.display = 'block';
         displayGoals();
     });
+    //page 4
     document.getElementById('goToItems').addEventListener('click', function () {
         click.play()
         homeAudio.pause();
         document.getElementById('page_1').style.display = 'none';
         document.getElementById('page_4').style.display = 'block';
-        displayGoals();
+        displayItems();
     });
+
     //home page
     document.getElementById('backHome').addEventListener('click', returnHome);
     document.getElementById('backHome2').addEventListener('click', returnHome);
+    document.getElementById('backHome3').addEventListener('click', returnHome);
     
     //file download
     document.getElementById('saveButton').addEventListener('click', goalsToDownload);
@@ -67,6 +70,7 @@ function returnHome(){
     document.getElementById('page_1').style.display = 'block';
     document.getElementById('page_2').style.display = 'none';
     document.getElementById('page_3').style.display = 'none';
+    document.getElementById('page_4').style.display = 'none';
 }
 
 //if start button gets pressed

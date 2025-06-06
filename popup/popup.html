@@ -11,19 +11,26 @@
 <body>
     <h1> Welcome to Your Study Timer!</h1>
     <div id='page_1'>
-    <button type='button' id='goToPomodoro'>Let's Go!</button>
-    <button type='button' id='goToGoals'>Visit Goals</button>
-    <button type='button' id='goToItems'>My Items</button>
     <p class='caption'> Use this as a convenient browser timer for your study sessions. </p>
+    <button type='button' class='opening_button' id='goToPomodoro'>Let's Go!</button>
+    <button type='button' class='opening_button' id='goToGoals'>Visit Goals</button>
+    <button type='button' class='opening_button' id='goToItems'>My Items</button>
     </div>
-
     <div id='page_2' style='display: none;'>
         <button class='back-button' id='backHome'>Back to Home</button>
             <div class='rocking-bottle animate'>
-            <img src='../images/Glass.png' alt='Bottle Glass' class='bottle-layer glass'>
-            <img src='../images/Ice.png' alt='Ice' class='bottle-layer ice' id='ice'>
-            <img src='../images/Water.png' alt='Water' class='bottle-layer water' id='water'>
-        </div>
+                <img src='../images/Glass.png' alt='Bottle Glass' class='bottle-layer glass'>
+                <img src='../images/Ice.png' alt='Ice' class='bottle-layer ice' id='ice'>
+                <img src='../images/Water.png' alt='Water' class='bottle-layer water' id='water'>
+            </div>
+
+            <!--
+            <div class='candle-rock animate'>
+                <img src='../images/Glass.png' alt='Bottle Glass' class='bottle-layer glass'>
+                <img src='../images/Ice.png' alt='Ice' class='bottle-layer ice' id='ice'>
+                <img src='../images/Water.png' alt='Water' class='bottle-layer water' id='water'>
+            </div>
+            -->
 
         <div class='field'>
             <label class='headingpomo'>🕒 TIME:</label>
@@ -73,7 +80,7 @@
     </div>
 
     <div id='page_4' style='display: none;'>
-        <button class='back-button' id='backHome2'>Back to Home</button>
+        <button class='back-button' id='backHome3'>Back to Home</button>
         <label class='headingpomo'>🧊 MY ITEMS!</label>
             
         <div id='itemList' style='max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;'></div>
@@ -95,7 +102,7 @@
 
     <script src='items.js'></script>
     <script src='music_control.js'></script>
-    <script src='expand.js'></script>
+    <script src='goals.js'></script>
     <script src='maintime.js'></script>
 
 </body>

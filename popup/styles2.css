@@ -82,14 +82,14 @@ body{
 
 .headingpomo {
   font: bold;
-  font-size: 30px;
+  font-size: 25px;
   color: #25001f;
   margin-top: 3px;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .caption{
-  font-size: 15px;
+  font-size: 13px;
   color: #000000;
   text-align: left;
   margin-top: 3px;
@@ -208,11 +208,9 @@ button:active {
   align-items: center;
 }
 
-#goToPomodoro {
-  background-color: #4CAF50;
+.opening_button{
   border: none;
-  color: white;
-  padding: 40px 80px;
+  padding: 20px 80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -221,26 +219,40 @@ button:active {
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   position: absolute;
-  top: 45%;
+  transform: translate(-50%, -50%);
+}
+.opening_button{
+  border: none;
+  padding: 20px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+#goToPomodoro {
+  background-color: #4CAF50;
+  color: white;
+  position: absolute;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-
 #goToGoals {
   background-color: #ffff90;
-  border: none;
   color: rgb(255, 129, 11);
-  padding: 40px 80px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 36px;
-  cursor: pointer;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   position: absolute;
-  top: 75%;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#goToItems {
+  background-color: #ffb60c;
+  color: rgb(0, 106, 99);
+  position: absolute;
+  top: 86%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
