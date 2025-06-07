@@ -9,6 +9,7 @@ const download = document.getElementById('download')
 const alarmSound = document.getElementById('alarmSound');
 const stopSound = document.getElementById('alarmSoundStop');
 const beginSound = document.getElementById('alarmSoundBegin');
+const selectSound = document.getElementById('selectSound');
 
 const songs = [
   '../sounds_and_songs/songs/Crinoline Dreams (1).mp3',

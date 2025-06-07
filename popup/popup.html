@@ -84,9 +84,12 @@
         <label class='headingpomo'>🧊 MY ITEMS!</label>
             
         <div id='itemList' style='max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;'></div>
-        <form>
-            <label class='headingpomo'>🧊 Current Item Selected:</label>
-            <div id='itemQuickList'></div>
+        <form id="itemForm">
+            <label for="itemSelect" class="headingpomo">🎁 Select an Item:</label>
+            <select id="itemSelect" class="input">
+                <option value="">Select an item</option>
+                <!-- JavaScript will append valid <option> elements here -->
+            </select>
         </form>
     </div>
 
@@ -97,6 +100,7 @@
     <audio id='trash' src='../sounds_and_songs/effects/075652_20131202_dropping-trash-can-lid_zoomh2nxywav-87291.mp3' preload='auto'></audio>
     <audio id="download" src='../sounds_and_songs/effects/game-start-317318.mp3'></audio>
     <audio id='homeAudio' autoplay loop style='display: none;'>
+    <audio id='selectSound' src="../sounds_and_songs/effects/game-start-317318.mp3" preload="auto"></audio>
     <source src='../sounds_and_songs/songs/Airport-Lounge(chosic.com).mp3' type='audio/mp3'>
     </audio>
 

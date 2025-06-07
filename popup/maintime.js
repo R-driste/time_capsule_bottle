@@ -7,7 +7,14 @@ const initialHeight = 200;
 
 //main js listener searches for when start/stop are pressed
 document.addEventListener('DOMContentLoaded', function () {
-    //start
+    //page 2
+    document.getElementById('goToPomodoro').addEventListener('click', function () {
+        click.play()
+        homeAudio.pause();
+        document.getElementById('page_1').style.display = 'none';
+        document.getElementById('page_2').style.display = 'block';
+    });
+
     document.getElementById('startButton').addEventListener('click', function () {
         click.play()
         const inputElement = document.getElementById('durationInput');
@@ -19,19 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
         beginSound.play();
         startTimer(duration);
     });
-    //stop
+    
     document.getElementById('stopButton').addEventListener('click', function () {
         click.play()
         stopSound.play();
         stopTimer();
     });
-    //page 2
-    document.getElementById('goToPomodoro').addEventListener('click', function () {
-        click.play()
-        homeAudio.pause();
-        document.getElementById('page_1').style.display = 'none';
-        document.getElementById('page_2').style.display = 'block';
-    });
+
     //page 3
     document.getElementById('goToGoals').addEventListener('click', function () {
         click.play()
@@ -40,21 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('page_3').style.display = 'block';
         displayGoals();
     });
-    //page 4
-    document.getElementById('goToItems').addEventListener('click', function () {
-        click.play()
-        homeAudio.pause();
-        document.getElementById('page_1').style.display = 'none';
-        document.getElementById('page_4').style.display = 'block';
-        displayItems();
-    });
 
-    //home page
-    document.getElementById('backHome').addEventListener('click', returnHome);
-    document.getElementById('backHome2').addEventListener('click', returnHome);
-    document.getElementById('backHome3').addEventListener('click', returnHome);
-    
-    //file download
     document.getElementById('saveButton').addEventListener('click', goalsToDownload);
 
     document.getElementById('refreshButton').addEventListener('click', () => {
@@ -63,6 +50,31 @@ document.addEventListener('DOMContentLoaded', function () {
             clearGoals();
         }
     });
+
+    //page 4
+    document.getElementById('goToItems').addEventListener('click', function () {
+        let total = Number(localStorage.getItem('total')) || 0;
+        click.play()
+        homeAudio.pause();
+        document.getElementById('page_1').style.display = 'none';
+        document.getElementById('page_4').style.display = 'block';
+        fillItems(total);
+        displayItems();
+    });
+
+    document.getElementById('itemSelect').addEventListener('change', function () {
+        const newItem = this.value;
+        if (newItem) {
+            selectSound.play();
+            localStorage.setItem('item_current', newItem);
+            item_current = newItem;
+        }
+    });
+
+    //nav to home page
+    document.getElementById('backHome').addEventListener('click', returnHome);
+    document.getElementById('backHome2').addEventListener('click', returnHome);
+    document.getElementById('backHome3').addEventListener('click', returnHome);
 });
 
 function returnHome(){

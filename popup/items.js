@@ -9,7 +9,7 @@ const unlockableItems = [
     name: "Candle",
     image: "🕯️",
     rarity: "uncommon",
-    requirement: 600,
+    requirement: 10,
   },
   {
     name: "Ruler",
@@ -19,8 +19,7 @@ const unlockableItems = [
   }
 ];
 
-const item_current = localStorage.getItem('item_current') || 'Water Glass';
-
+let item_current = localStorage.getItem('item_current') || 'Water Glass';
 
 //item displays
 function displayItems() {
@@ -51,5 +50,30 @@ function displayItems() {
     `;
 
     container.appendChild(itemDiv);
+    fillItems(total);
   });
+}
+
+function fillItems(min) {
+  const select = document.getElementById('itemSelect');
+  select.innerHTML = '';
+  
+  //find the current item and show as default
+  unlockableItems
+    .filter(item => item.requirement <= min)
+    .sort((a, b) => {
+      if (a.name === item_current) return -1;
+      if (b.name === item_current) return 1;
+      return a.requirement - b.requirement;
+    })
+    //display each item as an option
+    .forEach(item => {
+      const option = document.createElement('option');
+      option.value = item.name;
+      option.textContent = `${item.image} ${item.name} (${item.rarity})`;
+      if (item.name === item_current) {
+        option.selected = true;
+      }
+      select.appendChild(option);
+    });
 }
