@@ -21,7 +21,7 @@ const unlockableItems = [
 
 let item_current = localStorage.getItem('item_current') || 'Water Glass';
 
-//item displays
+//item display in the list of attributes
 function displayItems() {
   const totalDiv = document.getElementById('totalTime');
   const container = document.getElementById('itemList');
@@ -48,12 +48,12 @@ function displayItems() {
       <strong>Rarity: </strong> ${itemEntry.rarity}<br>
       <strong>Requirement: </strong> ${itemEntry.requirement} minutes<br>
     `;
-
     container.appendChild(itemDiv);
     fillItems(total);
   });
 }
 
+//item options for the form
 function fillItems(min) {
   const select = document.getElementById('itemSelect');
   select.innerHTML = '';
@@ -76,4 +76,26 @@ function fillItems(min) {
       }
       select.appendChild(option);
     });
+}
+
+//change to item selected in 4th screen
+function updateItemDisplay() {
+  const waterDiv = document.getElementById('waterDiv');
+  const candleDiv = document.getElementById('candleDiv');
+
+  waterDiv.classList.remove('visible');
+  candleDiv.classList.remove('visible');
+
+  if (item_current === 'Water Glass') {
+    waterDiv.classList.add('visible');
+  } else if (item_current === 'Candle') {
+    candleDiv.classList.add('visible');
+  }
+
+  //helps me debug
+  alert(
+    `Selected item: ${item_current}\n` +
+    `Water class: ${waterDiv.className}\n` +
+    `Candle class: ${candleDiv.className}`
+  );
 }

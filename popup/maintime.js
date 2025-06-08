@@ -7,6 +7,7 @@ const initialHeight = 200;
 
 //main js listener searches for when start/stop are pressed
 document.addEventListener('DOMContentLoaded', function () {
+    updateItemDisplay();
     //page 2
     document.getElementById('goToPomodoro').addEventListener('click', function () {
         click.play()
@@ -31,6 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
         click.play()
         stopSound.play();
         stopTimer();
+    });
+
+    document.getElementById('itemSelect').addEventListener('change', function () {
+        item_current = this.value;
+        localStorage.setItem('item_current', item_current);
+        updateItemDisplay();
     });
 
     //page 3
