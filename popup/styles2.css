@@ -1,21 +1,3 @@
-h1 {
-  color: #000b5b;
-  text-align: center;
-  margin-top: 20px;
-  font: bold 40px;
-  font-family: 'Open Sans', cursive, sans-serif;
-}
-
-.expanding-text {
-    width: 100%;
-    min-height: 40px;
-    resize: none;
-    overflow: hidden;
-    box-sizing: border-box;
-    padding: 8px;
-    font-size: 16px;
-  }
-
 body{
     background-size: cover;
     background-position: center;
@@ -30,6 +12,7 @@ body{
     border-radius: 20px;
     overflow: hidden;
   }
+  /* dictates how the glass will move */
   @keyframes rockBackAndForth {
     0% {
         transform: rotate(-10deg);
@@ -42,6 +25,7 @@ body{
     }
 }
 
+/* styles for the glass bottle and candle */
 .rocking-bottle {
   position: fixed;
   top: 120px;
@@ -52,11 +36,9 @@ body{
   z-index: 10;
   transition: height 0.5s ease; /*Smooth height transition*/
 }
-
 .rocking-bottle.animate {
   animation: rockBackAndForth 2s ease-in-out infinite;
 }
-
 .rocking-candle {
   position: fixed;
   top: 120px;
@@ -67,7 +49,6 @@ body{
   z-index: 10;
   transition: height 0.5s ease; /*Smooth height transition*/
 }
-
 .rocking-candle.animate {
   animation: rockBackAndForth 2s ease-in-out infinite;
 }
@@ -79,7 +60,6 @@ body{
   top: 0;
   left: 0;
 }
-
 .candle-layer {
   position: absolute;
   width: 100%;
@@ -88,6 +68,7 @@ body{
   left: 0;
 }
 
+/* water needs to rise up as ice melts */
 #water {
   transform-origin: 50% 90%;
   transform: scaleY(0); /*glass starts empty*/
@@ -98,6 +79,27 @@ body{
   bottom: 0;
 }
 
+/* ice needs to shrink down as time passes */
+#ice {
+    transform-origin: 50% 90%;
+    transform: scaleY(1);
+    transition: transform 1s linear;
+}
+
+/* candle wax should shorten with time */
+#candle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* flame should follow candle down */
+#flame {
+
+}
+
+/* only one item should show at a time */
 #waterDiv,
 #candleDiv {
   opacity: 0;
@@ -106,7 +108,6 @@ body{
   transition: opacity 0.5s ease;
   position: absolute;
 }
-
 #waterDiv.visible,
 #candleDiv.visible {
   opacity: 1;
@@ -114,18 +115,26 @@ body{
   pointer-events: auto;
 }
 
-#candle {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
+
+/* text related styling */
+h1 {
+  color: #000b5b;
+  text-align: center;
+  margin-top: 20px;
+  font: bold 40px;
+  font-family: 'Open Sans', cursive, sans-serif;
 }
 
-#ice {
-    transform-origin: 50% 90%;
-    transform: scaleY(1);
-    transition: transform 1s linear;
-}
+/* manages the text input for goals */
+.expanding-text {
+    width: 100%;
+    min-height: 40px;
+    resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 16px;
+  }
 
 .headingpomo {
   font: bold;
@@ -143,74 +152,7 @@ body{
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-.button-start {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  border-radius: 10px;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-}
-
-.button-stop {
-  background-color: #5584e8;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-}
-
-button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-button:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 600px) {
-  h1 {
-      font-size: 2rem;
-  }
-
-  p {
-      font-size: 1rem;
-  }
-
-  button {
-      padding: 10px 20px;
-      font-size: 0.9rem;
-  }
-}
-
+/* timer and music controls */
 .timer {
   display: block;
   margin: 0;
@@ -279,6 +221,8 @@ button:active {
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
+
+/* buttons galore */
 #goToPomodoro {
   background-color: #4CAF50;
   color: white;
@@ -331,4 +275,73 @@ button:active {
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.button-start {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.button-stop {
+  background-color: #5584e8;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  h1 {
+      font-size: 2rem;
+  }
+
+  p {
+      font-size: 1rem;
+  }
+
+  button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
 }
