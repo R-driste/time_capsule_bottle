@@ -1,6 +1,6 @@
-# My Study Timer
+# Simple Study Timer
 
-Welcome to MyStudyTimer! A chrome extension for you to conveniently track your study time. To use this extension, simply download the extension package and in the extensions developer mode, upload it to your chrome account.
+Welcome! This is a simple chrome extension for you to conveniently track your study time. To use this extension, simply download the extension package and in the extensions developer mode, upload it to your chrome account.
 
 Need to study but don't have ice or candles on hand? With our extension, you can easily open up the pop-up for convenient, aesthetic, and focused study time. Watch the ice slowly melt as the seconds tick away. Play some music tracks to go along and write down your goals. Later reference, your previous study goals as a means to feel accomplished :D.
 
