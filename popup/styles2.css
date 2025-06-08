@@ -1,3 +1,5 @@
+/* so much of my css is redundant from copy pasting from my past projects but I'll get to cleaning it someday */
+
 body{
     background-size: cover;
     background-position: center;
@@ -221,7 +223,7 @@ h1 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* buttons galore */
+/* buttons galore yippeee */
 #goToPomodoro {
   background-color: #4CAF50;
   color: white;
@@ -275,7 +277,6 @@ h1 {
   transition: transform 0.2s ease, background-color 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
 
 .button-start {
   background-color: #4CAF50; /* Green */

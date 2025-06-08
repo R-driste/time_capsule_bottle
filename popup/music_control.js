@@ -1,3 +1,4 @@
+//get all the audio elements
 const musicButton = document.getElementById('musicButton');
 const audioPlayer = document.getElementById('audioPlayer');
 const audioSource = document.getElementById('audioSource');
@@ -11,6 +12,7 @@ const stopSound = document.getElementById('alarmSoundStop');
 const beginSound = document.getElementById('alarmSoundBegin');
 const selectSound = document.getElementById('selectSound');
 
+//track of songs
 const songs = [
   '../sounds_and_songs/songs/Crinoline Dreams (1).mp3',
   '../sounds_and_songs/songs/Jazz Brunch.mp3',
@@ -23,11 +25,10 @@ const songs = [
 
 let currentSongIndex = songs.length - 1;
 
+//switch the song to the next one in line
 musicButton.addEventListener('click', () => {
     click.play();
-
     currentSongIndex = (currentSongIndex + 1) % songs.length;
-    
     audioSource.src = songs[currentSongIndex];
     audioPlayer.load();
     if (songs[currentSongIndex]) {

@@ -117,7 +117,7 @@ function startTimer(duration) {
         //update time text incrementally
         timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
-        //raise water height incrementally
+        //raise item heights incrementally
         if (water_pool) {
             let scale = Math.min(2.5, percentage_water);
             water_pool.style.transform = `scaleY(${scale})`;

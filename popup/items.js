@@ -1,3 +1,4 @@
+//hardcoded unlockable items lol
 const unlockableItems = [
   {
     name: "Water Glass",
