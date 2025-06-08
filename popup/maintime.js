@@ -1,8 +1,11 @@
 let timerInterval;
-const bottle = document.querySelector('.rocking-bottle');
+const bottle = document.querySelector('.rocking-item');
 const timerElement = document.getElementById('timer');
 const water_pool = document.getElementById('water');
 const ice_blocks = document.getElementById('ice')
+const flame = document.getElementById('flame');
+const smoke = document.getElementById('smoke');
+const candle = document.getElementById('candle');
 const initialHeight = 200;
 
 //main js listener searches for when start/stop are pressed
@@ -98,6 +101,7 @@ function startTimer(duration) {
     let increment = 2.0/duration;
     let percentage_water = 0;
     let percentage_ice = 1;
+    let candle_scale = 1
 
     clearInterval(timerInterval);
     if (bottle) startRocking();
@@ -106,6 +110,7 @@ function startTimer(duration) {
         duration--;
         const minutes = Math.floor(duration / 60);
         const seconds = duration % 60;
+        candle_scale -= increment/4;
         percentage_water = percentage_water + increment;
         percentage_ice = percentage_ice - increment/2;
 
@@ -114,13 +119,21 @@ function startTimer(duration) {
 
         //raise water height incrementally
         if (water_pool) {
-            const scale = Math.min(2.5, percentage_water);
+            let scale = Math.min(2.5, percentage_water);
             water_pool.style.transform = `scaleY(${scale})`;
         }
 
         if (ice_blocks) {
-            const scale = Math.max(0, percentage_ice);
+            let scale = Math.max(0, percentage_ice);
             ice_blocks.style.transform = `scaleY(${scale})`;
+        }
+
+        if (flame) {
+            flame.style.transform = `scale(${candle_scale})`;
+        }
+
+        if (candle) {
+            candle.style.transform = `scaleY(${candle_scale})`;
         }
 
         //when timer gets over
@@ -140,12 +153,16 @@ function startTimer(duration) {
 //if stop button gets pressed
 function stopTimer() {
     const timerElement = document.getElementById('timer');
-    const bottle = document.querySelector('.rocking-bottle');
+    const item = document.querySelector('.rocking-item');
     clearInterval(timerInterval);
 
-    if (bottle) stopRocking();
+    if (item) stopRocking();
     if (water_pool) water_pool.style.transform = 'scaleY(0)';
     if (ice_blocks) ice_blocks.style.transform = 'scaleY(1)';
+
+    if (item) stopRocking();
+    if (flame) flame.style.transform = 'scale(0)';
+    if (candle) candle.style.transform = 'scaleY(1)';
 
     timerElement.textContent = '---';
 }
@@ -160,4 +177,6 @@ function startRocking() {
 //anim stop
 function stopRocking() {
     bottle.classList.remove('animate');
+    if (flame) flame.style.transform = 'scale(0)';
+    if (smoke) smoke.style.transform = 'scale(1)';
 }

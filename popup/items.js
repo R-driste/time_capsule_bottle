@@ -91,11 +91,4 @@ function updateItemDisplay() {
   } else if (item_current === 'Candle') {
     candleDiv.classList.add('visible');
   }
-
-  //helps me debug
-  alert(
-    `Selected item: ${item_current}\n` +
-    `Water class: ${waterDiv.className}\n` +
-    `Candle class: ${candleDiv.className}`
-  );
 }

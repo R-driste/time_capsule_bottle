@@ -22,6 +22,7 @@ This is the HTML file for the MyStudyTimer extension popup.
         <button type='button' class='opening_button' id='goToPomodoro'>Let's Go!</button>
         <button type='button' class='opening_button' id='goToGoals'>Visit Goals</button>
         <button type='button' class='opening_button' id='goToItems'>My Items</button>
+        <!-- random aero lite details-->
         <img src='../images/cherryy.png' alt='Icon' style='position: absolute; top: 30%; left: 10%; width: 100px; height: auto; margin-top: 20px;'>
         <img src='../images/goals-Photoroom.png' alt='Icon' style='position: absolute; top: 50%; left: 70%; width: 100px; height: auto; margin-top: 20px;'>
         <img src='../images/waterglass.png' alt='Icon' style='position: absolute; top: 75%; left: 10%; width: 100px; height: auto; margin-top: 20px;'>    
@@ -30,15 +31,21 @@ This is the HTML file for the MyStudyTimer extension popup.
     <!--Timer Screen
     This is the primary screen with the timer, goal box, and music player. -->
     <div id='page_2' style='display: none;'>
+
+        <!--Item option 1-->
         <button class='back-button' id='backHome'>Back to Home</button>
         <div>
-        <div id='waterDiv' class='rocking-bottle animate'>
+        <div id='waterDiv' class='rocking-item animate'>
                 <img src='../images/Glass.png' alt='Bottle Glass' class='bottle-layer glass' id='glass'>
                 <img src='../images/Ice.png' alt='Ice' class='bottle-layer ice' id='ice'>
                 <img src='../images/Water.png' alt='Water' class='bottle-layer water' id='water'>
         </div>
-        <div id='candleDiv' class='rocking-candle animate'>
-                <img src='../images/icon128.png' alt='Candle Glass' class='candle-layer candle' id='candle'>
+
+        <!--Item option 2-->
+        <div id='candleDiv' class='rocking-item animate'>
+                <img src='../images/candle.png' alt='Candle' class='candle-layer candle' id='candle'>
+                <img src='../images/flame.png' alt='Flame' class='candle-layer flame' id='flame'>
+                <!-- <img src='../images/smoke.png' alt='Smoke' class='candle-layer smoke' id='smoke'> for later-->
             </div>
         </div>
 
@@ -121,9 +128,9 @@ This is the HTML file for the MyStudyTimer extension popup.
     </audio>
     
     <!--JavaScript imports-->
-    <script src='items.js'></script> //Item selection
-    <script src='music_control.js'></script> //Music control
-    <script src='goals.js'></script> //Goal management
-    <script src='maintime.js'></script> //Main listeners
+    <script src='items.js'></script>
+    <script src='music_control.js'></script>
+    <script src='goals.js'></script>
+    <script src='maintime.js'></script>
 </body>
 </html>
