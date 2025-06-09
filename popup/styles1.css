@@ -1,0 +1,348 @@
+/* so much of my css is redundant from copy pasting from my past projects but I'll get to cleaning it someday */
+
+body{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 600px;
+    margin: 5px;
+    padding: 5px;
+    background-image: url('../images/v640-peipei-09-modernbg.jpg');
+    background-repeat: repeat-y;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  /* dictates how the glass will move */
+  @keyframes rockBackAndForth {
+    0% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+/* styles for the glass bottle and candle */
+.rocking-item {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform-origin: center;
+  width: 200px; /*Fixed width*/
+  height: 200px; /*Initial height*/
+  z-index: 10;
+  transition: height 0.5s ease; /*Smooth height transition*/
+}
+.rocking-item.animate {
+  animation: rockBackAndForth 2s ease-in-out infinite;
+}
+
+.bottle-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.candle-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* water needs to rise up as ice melts */
+#water {
+  transform-origin: 50% 90%;
+  transform: scaleY(0); /*glass starts empty*/
+  transition: transform 0.3s linear;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* ice needs to shrink down as time passes */
+#ice {
+    transform-origin: 50% 90%;
+    transform: scaleY(1);
+    transition: transform 1s linear;
+}
+
+#flame {
+    transform-origin: 50% 90%;
+    transform: scale(0);
+    transition: transform 1s linear;
+}
+
+#candle {
+    transform-origin: 50% 90%;
+    transform: scaleY(0.6);
+    transition: transform 1s linear;
+}
+
+/* candle wax should shorten with time */
+#candle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* flame should follow candle down */
+#flame {
+
+}
+
+/* only one item should show at a time */
+#waterDiv,
+#candleDiv {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  position: absolute;
+}
+#waterDiv.visible,
+#candleDiv.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* text related styling */
+h1 {
+  color: #000b5b;
+  text-align: center;
+  margin-top: 20px;
+  font: bold 40px;
+  font-family: 'Open Sans', cursive, sans-serif;
+}
+
+/* manages the text input for goals */
+.expanding-text {
+    width: 100%;
+    min-height: 40px;
+    resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 16px;
+  }
+
+.headingpomo {
+  font: bold;
+  font-size: 25px;
+  color: #25001f;
+  margin-top: 3px;
+  align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.caption{
+  font-size: 13px;
+  color: #000000;
+  text-align: left;
+  margin-top: 3px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* timer and music controls */
+.timer {
+  display: block;
+  margin: 0;
+  font-size: 50px;
+  font-weight: bold;
+  position: relative;
+  color: white;
+  background-color: grey;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.timer-container {
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+#audioPlayer {
+  width: 200px;
+  height: 15px;
+}
+
+.music-section {
+  background-color:rgb(59, 222, 222);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opening_button{
+  border: none;
+  padding: 20px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.opening_button{
+  border: none;
+  padding: 50px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 36px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* buttons galore yippeee */
+#goToPomodoro {
+  background-color: #4CAF50;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#goToGoals {
+  background-color: #ffff90;
+  color: rgb(255, 129, 11);
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#goToItems {
+  background-color: #ffb60c;
+  color: rgb(0, 106, 99);
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    padding: 3px 5px;
+    font-size: 0.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#musicButton{
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px;
+  margin: 0px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button-start {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.button-stop {
+  background-color: #5584e8;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  h1 {
+      font-size: 2rem;
+  }
+
+  p {
+      font-size: 1rem;
+  }
+
+  button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
+}
