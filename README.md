@@ -2,10 +2,19 @@
 
 ## Welcome! This is a simple chrome extension for you to conveniently track your study time.
 
+<p align="center">
+  <img src="ss/Screenshot 2025-06-09 at 2.58.15 PM.png" width="100"/>
+  <img src="ss/Screenshot 2025-06-09 at 2.58.49 PM.png" width="100"/>
+  <img src="ss/Screenshot 2025-06-09 at 2.59.04 PM.png" width="100"/>
+  <img src="ss/Screenshot 2025-06-09 at 2.59.12 PM.png" width="100"/>
+</p>
+
 There are two ways to interact with the project. Because it is still pending for approval as an official chrome extension, you may:
 
 ### A. Check out the website version hosted on Vercel! The formatting is not as nice since the application is intended for a small popup window but the functionality is all the same :D
-# Website Link: FOR LAPTOP [https://time-capsule-bottle.vercel.app/laptop] FOR PHONE [https://time-capsule-bottle.vercel.app/laptop]
+# Website Links:
+## FOR LAPTOP [https://time-capsule-bottle.vercel.app/laptop]
+## FOR PHONE [https://time-capsule-bottle.vercel.app/laptop]
 
 ### B. To use this extension, simply download the extension zip, expand it, and click on manage extensions. Enable developer mode and connect the expanded folder. Voila, your extension should be available on your desktop.
 # Download Link: https://drive.google.com/file/d/1IEekrlGtfgr51FsZzXHWG9ccCKj_T8I_/view?usp=drive_link
