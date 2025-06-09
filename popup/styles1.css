@@ -114,11 +114,11 @@ body{
 
 /* text related styling */
 h1 {
+  left: 50%;
   color: #000b5b;
   text-align: center;
   margin-top: 20px;
   font: bold 40px;
-  align-self: center;
   font-family: 'Open Sans', cursive, sans-serif;
 }
 
@@ -184,6 +184,13 @@ h1 {
 #audioPlayer {
   width: 200px;
   height: 15px;
+}
+
+.random-line {
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background-color: black;
 }
 
 .music-section {

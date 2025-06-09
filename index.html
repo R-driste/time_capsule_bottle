@@ -84,6 +84,7 @@ This is the HTML file for the MyStudyTimer extension popup.
             <p class='caption'>I will complete:</p>
             <textarea class='expanding-text' id='expandingText' placeholder='Type something...'></textarea>
         </div>
+        <div class="random-line"></div>
     </div>
 
     <!--Goals Screen
@@ -97,6 +98,8 @@ This is the HTML file for the MyStudyTimer extension popup.
         <button id="saveButton">Download!</button>
         <button id="refreshButton">Clear :'O</button>
         <img src="/images/icon48.png" style="width: 300px; height: auto; top: 90%; right: 10%;" alt="Icon">
+        <img src="/images/goal.png" style="position: absolute; height:500px; width: auto; top: 10%; left: 70%;" alt="Goal Icon">
+        <div class="random-line"></div>
     </div>
 
     <!--Items Screen
@@ -113,6 +116,7 @@ This is the HTML file for the MyStudyTimer extension popup.
                 <!--js will fill this section-->
             </select>
         </form>
+        <div class="random-line"></div>
     </div>
 
     <!--Resource imports are here-->
@@ -132,5 +136,17 @@ This is the HTML file for the MyStudyTimer extension popup.
     <script src='popup/music_control.js'></script>
     <script src='popup/goals.js'></script>
     <script src='popup/maintime.js'></script>
+
+    <script>
+        const lines = document.querySelectorAll('.random-line');
+        lines.forEach(line => {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            line.style.left = `${x}px`;
+            line.style.top = `${y}px`;
+        });
+    </script>
+
+
 </body>
 </html>
