@@ -1,0 +1,136 @@
+<!--
+This is the HTML file for the MyStudyTimer extension popup.
+-->
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='bulma.min.css'>
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' href='styles2.css'>
+    <title>MyStudyTimer</title>
+</head>
+<body>
+    <!--Header for every page-->
+    <h1> Welcome to Your Study Timer!</h1>
+    <!--Home Screen
+    Here the user can navigate to the timer, goals, or items. -->
+    <div id='page_1'>
+        <p class='caption'> Use this extension as a convenient  timer for study sessions :) </p>
+        <button type='button' class='opening_button' id='goToPomodoro'>Let's Go!</button>
+        <button type='button' class='opening_button' id='goToGoals'>Visit Goals</button>
+        <button type='button' class='opening_button' id='goToItems'>My Items</button>
+        <!-- random aero lite details-->
+        <img src='../images/cherryy.png' alt='Icon' style='position: absolute; top: 30%; left: 10%; width: 100px; height: auto; margin-top: 20px;'>
+        <img src='../images/goals-Photoroom.png' alt='Icon' style='position: absolute; top: 50%; left: 70%; width: 100px; height: auto; margin-top: 20px;'>
+        <img src='../images/waterglass.png' alt='Icon' style='position: absolute; top: 75%; left: 10%; width: 100px; height: auto; margin-top: 20px;'>    
+    </div>
+
+    <!--Timer Screen
+    This is the primary screen with the timer, goal box, and music player. -->
+    <div id='page_2' style='display: none;'>
+
+        <!--Item option 1-->
+        <button class='back-button' id='backHome'>Back to Home</button>
+        <div>
+        <div id='waterDiv' class='rocking-item animate'>
+                <img src='../images/Glass.png' alt='Bottle Glass' class='bottle-layer glass' id='glass'>
+                <img src='../images/Ice.png' alt='Ice' class='bottle-layer ice' id='ice'>
+                <img src='../images/Water.png' alt='Water' class='bottle-layer water' id='water'>
+        </div>
+
+        <!--Item option 2-->
+        <div id='candleDiv' class='rocking-item animate'>
+                <img src='../images/candle.png' alt='Candle' class='candle-layer candle' id='candle'>
+                <img src='../images/flame.png' alt='Flame' class='candle-layer flame' id='flame'>
+                <!-- <img src='../images/smoke.png' alt='Smoke' class='candle-layer smoke' id='smoke'> for later-->
+            </div>
+        </div>
+
+        <div class='field'>
+            <label class='headingpomo'>🕒 TIME:</label>
+            <p class='caption'>I will study for # minutes:</p>
+            <div class='control'>
+                <input type='number' class='input' id='durationInput' placeholder='Enter minutes'>
+            </div>
+        </div>
+
+        <div class='class'>
+            <span class='button-start' id='startButton'>Start the Timer!</span>
+        </div>
+        <div class='class'>
+            <span class='button-stop' id='stopButton'>Stop the Timer.</span>
+        </div>
+
+        <div class='side-by-side'>
+            <div class='timer-container'>
+                <p id='timer' class='timer'>00:00</p>
+            </div>
+            <div class='music-section'>
+                <button id='musicButton'>
+                    Switch song? <img src='../images/music.png' alt='Music Icon' width='20px' height='20px'>
+                </button>
+                <audio id='audioPlayer' controls>
+                    <source id='audioSource' src='' type='audio/mp3'>
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <div class='field'>
+            <label class='headingpomo'>📝 GOALS:</label>
+            <p class='caption'>I will complete:</p>
+            <textarea class='expanding-text' id='expandingText' placeholder='Type something...'></textarea>
+        </div>
+    </div>
+
+    <!--Goals Screen
+    This screen contains a log of all the past sessions of the user.-->
+    <div id='page_3' style='display: none;'>
+        <button class='back-button' id='backHome2'>Back to Home</button>
+        <label class='headingpomo'>🏆 MY SAVED GOALS:</label>
+        <div id="totalTime"></div>
+        <!--js will fill this section-->
+        <div id='goalList' style='max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;'></div>
+        <button id="saveButton">Download!</button>
+        <button id="refreshButton">Clear :'O</button>
+        <img src="../images/icon48.png" style="width: 300px; height: auto; top: 90%; right: 10%;" alt="Icon">
+    </div>
+
+    <!--Items Screen
+    In this section, the user can select what item they want as their timer. They need to unlock items with minutes studied.-->
+    <div id='page_4' style='display: none;'>
+        <button class='back-button' id='backHome3'>Back to Home</button>
+        <label class='headingpomo'>🧊 MY ITEMS!</label>
+            
+        <div id='itemList' style='max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;'></div>
+        <form id="itemForm">
+            <label for="itemSelect" class="headingpomo">🎁 Select an Item:</label>
+            <select id="itemSelect" class="input">
+                <option value="">Select an item</option> 
+                <!--js will fill this section-->
+            </select>
+        </form>
+    </div>
+
+    <!--Resource imports are here-->
+    <audio id='click' src='../sounds_and_songs/effects/keyboard-click-327728.mp3' preloud='auto'></audio>
+    <audio id='alarmSound' src='../sounds_and_songs/effects/wine-glass-clink-36036.mp3' preload='auto'></audio>
+    <audio id='alarmSoundBegin' src='../sounds_and_songs/effects/ice-cube-glass-clink-ni-sound-1-00-01.mp3' preload='auto'></audio>
+    <audio id='alarmSoundStop' src='../sounds_and_songs/effects/happy-ending-94451.mp3' preload='auto'></audio>
+    <audio id='trash' src='../sounds_and_songs/effects/075652_20131202_dropping-trash-can-lid_zoomh2nxywav-87291.mp3' preload='auto'></audio>
+    <audio id="download" src='../sounds_and_songs/effects/game-start-317318.mp3'></audio>
+    <audio id='homeAudio' autoplay loop style='display: none;'>
+    <audio id='selectSound' src="../sounds_and_songs/effects/game-start-317318.mp3" preload="auto"></audio>
+    <source src='../sounds_and_songs/songs/Airport-Lounge(chosic.com).mp3' type='audio/mp3'>
+    </audio>
+    
+    <!--JavaScript imports-->
+    <script src='items.js'></script>
+    <script src='music_control.js'></script>
+    <script src='goals.js'></script>
+    <script src='maintime.js'></script>
+</body>
+</html>
