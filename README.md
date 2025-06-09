@@ -15,6 +15,7 @@ Background Image: Image by rawpixel.com on Freepik
 Navigation icons: royalty free web images
 Music Icon: Image from Flaticon
 Glass/Candle Image: Hand drawn by me, Dristi Roy
+Table Photo for Page 4: Photo by Mike: https://www.pexels.com/photo/hourglass-on-brown-wooden-frame-1178683/
 
 Music Credits:
 Home Screen Music: Airport Lounge by Kevin MacLeod | https://incompetech.com/
