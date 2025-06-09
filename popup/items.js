@@ -10,7 +10,7 @@ const unlockableItems = [
     name: "Candle",
     image: "🕯️",
     rarity: "uncommon",
-    requirement: 10,
+    requirement: 2,
   },
   {
     name: "Ruler",

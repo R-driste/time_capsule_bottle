@@ -18,7 +18,7 @@ This is the HTML file for the MyStudyTimer extension popup.
     <!--Home Screen
     Here the user can navigate to the timer, goals, or items. -->
     <div id='page_1'>
-        <p class='caption' style='position: absolute; top:30px; left: 30%;'> Use this extension as a convenient  timer for study sessions :) </p>
+        <p class='caption' style='position: absolute; top:70px; left: 30%;'> Use this extension as a convenient  timer for study sessions :) </p>
         <button type='button' class='opening_button' id='goToPomodoro'>Let's Go!</button>
         <button type='button' class='opening_button' id='goToGoals'>Visit Goals</button>
         <button type='button' class='opening_button' id='goToItems'>My Items</button>
@@ -94,11 +94,11 @@ This is the HTML file for the MyStudyTimer extension popup.
         <label class='headingpomo'>🏆 MY SAVED GOALS:</label>
         <div id="totalTime"></div>
         <!--js will fill this section-->
-        <div id='goalList' style='max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;'></div>
+        <div id='goalList' style='color:darkblue; max-height: 300px; overflow-y: auto; border: 3px solid #f6ff00; padding: 10px;'></div>
         <button id="saveButton">Download!</button>
         <button id="refreshButton">Clear :'O</button>
         <img src="/images/icon48.png" style="width: 300px; height: auto; top: 90%; right: 10%;" alt="Icon">
-        <img src="/images/goal.png" style="position: absolute; height:500px; width: auto; top: 10%; left: 70%;" alt="Goal Icon">
+        <img src="/images/goals.jpg" style="position: absolute; height:500px; width: auto; top: 10%; left: 70%;" alt="Goal Icon">
         <div class="random-line"></div>
     </div>
 
@@ -108,7 +108,7 @@ This is the HTML file for the MyStudyTimer extension popup.
         <button class='back-button' id='backHome3'>Back to Home</button>
         <label class='headingpomo'>🧊 MY ITEMS!</label>
             
-        <div id='itemList' style='max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;'></div>
+        <div id='itemList' style='color:darkblue; max-height: 300px; overflow-y: auto; border: 3px solid #00ffff; padding: 10px;'></div>
         <form id="itemForm">
             <label for="itemSelect" class="headingpomo">🎁 Select an Item:</label>
             <select id="itemSelect" class="input">
