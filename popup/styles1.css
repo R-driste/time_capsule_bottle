@@ -111,9 +111,10 @@ body{
   pointer-events: auto;
 }
 
-
 /* text related styling */
 h1 {
+  position: absolute;
+  top:10px;
   left: 50%;
   color: #000b5b;
   text-align: center;
