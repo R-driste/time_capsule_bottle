@@ -33,8 +33,8 @@ body{
   top: 120px;
   left: 50%;
   transform-origin: center;
-  width: 200px; /*Fixed width*/
-  height: 200px; /*Initial height*/
+  width: 400px; /*Fixed width*/
+  height: auto; /*Initial height*/
   z-index: 10;
   transition: height 0.5s ease; /*Smooth height transition*/
 }
@@ -44,15 +44,15 @@ body{
 
 .bottle-layer {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: auto;
   top: 0;
   left: 0;
 }
 .candle-layer {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: auto;
   top: 0;
   left: 0;
 }
@@ -62,8 +62,8 @@ body{
   transform-origin: 50% 90%;
   transform: scaleY(0); /*glass starts empty*/
   transition: transform 0.3s linear;
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: auto;
   position: absolute;
   bottom: 0;
 }
@@ -75,29 +75,24 @@ body{
     transition: transform 1s linear;
 }
 
+/* flame should follow candle down */
 #flame {
     transform-origin: 50% 90%;
     transform: scale(0);
     transition: transform 1s linear;
-}
-
-#candle {
-    transform-origin: 50% 90%;
-    transform: scaleY(0.6);
-    transition: transform 1s linear;
+    width: 400px;
+    height: auto;
+    position: absolute;
 }
 
 /* candle wax should shorten with time */
 #candle {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-/* flame should follow candle down */
-#flame {
-
+    width: 400px;
+    height: auto;
+    position: absolute;
+    transform-origin: 50% 90%;
+    transform: scaleY(0.6);
+    transition: transform 1s linear;
 }
 
 /* only one item should show at a time */
@@ -123,6 +118,7 @@ h1 {
   text-align: center;
   margin-top: 20px;
   font: bold 40px;
+  align-self: center;
   font-family: 'Open Sans', cursive, sans-serif;
 }
 
@@ -142,14 +138,14 @@ h1 {
   font-size: 25px;
   color: #25001f;
   margin-top: 3px;
-  align: center;
+  align-self: center;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .caption{
   font-size: 13px;
   color: #000000;
-  text-align: left;
+  text-align: center;
   margin-top: 3px;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
