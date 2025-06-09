@@ -140,10 +140,8 @@ This is the HTML file for the MyStudyTimer extension popup.
     <script>
         const lines = document.querySelectorAll('.random-line');
         lines.forEach(line => {
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-            line.style.left = `${x}px`;
-            line.style.top = `${y}px`;
+            line.style.left = `${0.3*window.innerWidth}px`;
+            line.style.top = `${0.5*window.innerHeight}px`;
         });
     </script>
 
