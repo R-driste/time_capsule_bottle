@@ -188,9 +188,9 @@ h1 {
 
 .random-line {
   position: absolute;
-  width: 2px;
-  height: 150px;
-  background-color: black;
+  width: 4px;
+  height: 500px;
+  background-color: rgb(0, 3, 78);
 }
 
 .music-section {
