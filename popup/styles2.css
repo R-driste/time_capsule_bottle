@@ -142,7 +142,7 @@ h1 {
   font-size: 25px;
   color: #25001f;
   margin-top: 3px;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Silkscreen", sans-serif;
 }
 
 .caption{
@@ -150,7 +150,7 @@ h1 {
   color: #000000;
   text-align: left;
   margin-top: 3px;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Silkscreen", sans-serif;
 }
 
 /* timer and music controls */
@@ -288,6 +288,7 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-family: "Silkscreen", sans-serif;
   margin: 4px 2px;
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
@@ -303,6 +304,7 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-family: "Silkscreen", sans-serif;
   margin: 4px 2px;
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);

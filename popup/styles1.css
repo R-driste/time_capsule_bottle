@@ -1,5 +1,4 @@
 /* so much of my css is redundant from copy pasting from my past projects but I'll get to cleaning it someday */
-
 body{
     background-size: cover;
     background-position: center;
@@ -14,6 +13,7 @@ body{
     border-radius: 20px;
     overflow: hidden;
   }
+
   /* dictates how the glass will move */
   @keyframes rockBackAndForth {
     0% {
@@ -140,7 +140,7 @@ h1 {
   color: #25001f;
   margin-top: 3px;
   align-self: center;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Silkscreen", sans-serif;
 }
 
 .caption{
@@ -148,7 +148,7 @@ h1 {
   color: #000000;
   text-align: center;
   margin-top: 3px;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Silkscreen", sans-serif;
 }
 
 /* timer and music controls */
